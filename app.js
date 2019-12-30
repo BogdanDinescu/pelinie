@@ -18,7 +18,8 @@ app.use(express.static(__dirname + '/avatars'))
 app.use(express.static(__dirname + '/styles'))
 app.use(express.static(__dirname + '/scripts'))
 
-mongoose.connect('mongodb://localhost:27017/project', {useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect('mongodb://localhost:27017/project', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://uonegqmvvqcfy5opfqra:eEPNckV9G7Pzzmc0QeNN@bqreou92suoisqv-mongodb.services.clever-cloud.com:27017/bqreou92suoisqv', {useNewUrlParser: true, useUnifiedTopology: true});
 
 mongoose.connection.on('connected', function() {
     console.log("Conectat");
