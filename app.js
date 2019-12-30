@@ -426,7 +426,7 @@ app.post('/update_profile',function(req,res){
 		}else{
 			User.findById(req.session.user._id,function(err,doc){
 				if(err) console.log(err);
-				if(req.file){
+				if(doc.avatar){
 					fs.unlinkSync("./avatars/"+doc.avatar);
 					doc.avatar = req.file.filename;
 				}
