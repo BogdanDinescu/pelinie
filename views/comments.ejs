@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head><title>Pe linie - comentarii</title>
+	<% include fragments/head %>
+	<link rel="stylesheet" type="text/css" href="style-comment.css">
+	</head>
+	<body>
+		<main>
+		<figure>
+			<figcaption><%= post.caption %></figcaption>
+			<img src="<%= post.path %>">
+			<div class = "puncte"><%= post.votes %></div>
+			<hr>
+		</figure>
+		<input type="text" placeholder="Comentariul tau aici" id="comment"></input>
+		<button onclick="comment()">Trimite</button><br>
+		<div id="response"></div>
+		Comentarii:
+		<div id="comment_section">
+		</div>
+		</main>
+		<% include fragments/footer %>
+	<script>post = <%- JSON.stringify(post) %>;</script>
+	<script src="script_comment.js"></script>
+	</body>
+</html>

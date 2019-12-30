@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head><title>Pe linie - Cont</title>
+	<% include fragments/head %>
+	<link rel="stylesheet" type="text/css" href="style-account.css">
+	</head>
+	<body>
+		<% include fragments/header %>
+		<div class="options-container">
+			<aside>
+				<h1>Profil</h1>
+				<img class="avatar">
+				<form>
+				</form>
+				<div id="response"></div>
+			</aside>
+			<main>
+			</main>
+		</div>
+		<% include fragments/footer %>
+	<script>
+		user = <%- JSON.stringify(user) %>;
+		paths = <%- JSON.stringify(paths) %>;
+	</script>
+	<script src="script_account.js"></script>
+	</body>
+</html>

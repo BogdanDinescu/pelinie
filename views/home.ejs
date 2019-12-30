@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head><title>Pe linie - home</title>
+	<% include fragments/head %>
+	<link rel="stylesheet" type="text/css" href="style-home.css">
+	</head>
+	<body>
+		<% include fragments/header %>
+		<div class="flex-container">
+			<aside>
+				<h2 onclick="afisareCategorii()">Categorii</h2>
+					<ul id="categorii"></ul>
+			</aside>
+			<main>
+			</main>
+			<button class="Load" onclick="get_posts()">Incarca mai multe</button>
+		</div>
+		<% include fragments/modal %>
+		<% include fragments/footer %>
+	<script>localStorage.setItem('user','<%- JSON.stringify(user) %>');</script>
+	<script src="script.js"></script>
+	</body>
+</html>

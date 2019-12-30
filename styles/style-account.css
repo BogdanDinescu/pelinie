@@ -1,0 +1,82 @@
+.options-container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.options-container aside{
+	width: 30%;
+	min-width: 300px;
+	background-color: white;
+	text-align: center;
+	border: 10px solid black;
+	box-sizing: border-box;
+	border-radius: 10px;
+	line-height: 1.6;
+}
+
+aside h1{
+	font-variant: small-caps;
+	font-size: 35px;
+	display: block;
+}
+
+aside{
+	text-align: right;
+}
+
+img.avatar{
+	border-radius: 300px;
+	width: 20vw;
+	height: 20vw;
+	min-width: 200px;
+	min-height: 200px;
+}
+
+.options-container main{
+	width: 60%;
+}
+
+button.deleteAccount{
+	background-color: red;
+	color: white;
+	font-weight: bold;
+}
+
+button.deleteAccount:hover{
+	background-color: black;
+}
+
+textarea{
+	max-width: 80%;
+}
+
+input[type="radio"],input[type="checkbox"]{
+	width: 2px;
+	min-width: 2px;
+}
+
+input[type="range"]{
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+	width: 20px;
+	height: 20px;
+}
+input[type="range"]::-moz-range-thumb {
+	width: 20px;
+	height: 20px;
+}
+
+blockquote{
+	display: inline-block;
+	background-color: white;
+	border: 1px dotted black;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}

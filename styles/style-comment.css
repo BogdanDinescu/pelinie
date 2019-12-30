@@ -1,0 +1,57 @@
+main{
+	margin: auto;
+	width: 80%;
+}
+
+#comment_section button:hover{
+	filter: invert(100%);
+	border-width: 2px;
+}
+#comment_section button:hover{
+	border-width: 3px;
+ }
+
+#comment_section{
+	display: block;
+	text-align: left;
+	width: 40vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#comment_section button{
+	width: 3vw;
+	height: 3vw;
+	min-width: 30px;
+	min-height: 30px;
+	max-width: 40px;
+	max-height: 40px;
+	border: 1px solid lightgrey;
+	border-radius: 10px;
+	background-color: rgb(220, 220, 220);
+	background-size: cover;
+}
+
+.comment_container{
+	
+}
+
+.comment_name{
+	color: blue;
+	display: inline-block;
+	margin-bottom: 10px;
+	cursor: pointer;
+	margin: 5px;
+}
+.message{
+	padding: 10px;
+	border: 1px dashed grey;
+	border-radius: 5px;
+	overflow: auto;
+}
+.comment_votes{
+	display: inline-block;
+}
+.comment_votes::after{
+	content: " puncte";
+}

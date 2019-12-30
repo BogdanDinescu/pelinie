@@ -1,0 +1,254 @@
+body{
+	font-family: "Trebuchet MS";
+	background: linear-gradient(to right,rgb(240, 30, 20),rgb(60, 140, 222));
+	animation-name: gradient;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+	animation-fill-mode: forwards;
+	background-size: 200% 200%;
+}
+
+header{
+	position: sticky;
+	top: 0;
+	left: 0;
+	display: block;
+	overflow: visible;
+	width: 90%;
+	margin: auto;
+	margin-bottom: 10px;
+	border-bottom: 2px solid black;
+	background-color: white;
+	z-index: 1;
+	text-align: center;
+}
+
+a:link, a:visited{
+	text-decoration: none;
+	color: black;
+}
+
+a:hover, a:active{
+	text-decoration: none;
+	color: red;
+}
+
+header a, .dropdownTitle, .dropdown-content>li{
+	font-size: 25px;
+	margin-left: -5px;
+	padding: 5px;
+	display: inline-block;
+	font-variant: small-caps;
+	color: black;
+}
+
+header a:hover, .dropdownTitle:hover, .dropdown-content>li:hover{
+	background-color: darkgrey;
+	color: white;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+img#logo{
+	display: block;
+	z-index: 1;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -8px;
+	width: 20%;
+	height: auto;
+	padding-left: 35%;
+	padding-right: 35%;
+	background-color: white;
+}
+
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.dropdown{
+	position: relative;
+	display: inline-block;
+}
+
+.dropdownTitle{
+	cursor: pointer;
+}
+
+.dropdown-content{
+	display: none;
+	position: absolute;
+	z-index: 2;
+	background-color: rgb(220, 220, 220);
+	border-radius: 10px;
+	text-align: left;
+	padding: 5px;
+	margin-top: 0;
+}
+
+.dropdown:hover .dropdown-content{
+	display: block;
+}
+
+figure{
+	margin-left: auto;
+    margin-right: auto;
+    width: 40vw;
+	min-width: 300px;
+	height: auto;
+	display: block;
+	/*animation-name: effect;*/
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	position: relative;
+}
+
+figure img{
+	max-height: 100%;
+	max-width: 100%;
+}
+
+figure figcaption{
+	font-size: 20px;
+	margin: 5px;
+	background-color: lightgrey;
+	border-radius: 5px 5px 0 0;
+	margin: 0;
+}
+
+@keyframes effect{
+	0%{
+		opacity: 0;
+		top: 50px;
+	}
+	100%{
+		opacity: 1;
+		top: 0px;
+	}
+}
+
+.puncte{
+	display: block;
+	font-size: 16px;
+}
+
+.puncte:after{
+	content: " puncte";
+}
+
+figure button{
+	width: 4vw;
+	height: 4vw;
+	min-width: 35px;
+	min-height: 35px;
+	max-width: 43px;
+	max-height: 43px;
+	border: 1px solid lightgrey;
+	border-radius: 10px;
+	background-color: rgb(220, 220, 220);
+	background-size: cover;
+}
+
+figure button:hover{
+	filter: invert(100%);
+	border-width: 2px;
+}
+figure button:active{
+	border-width: 3px;
+ }
+
+button.up{
+	background-image: url("up.png");
+}
+button.down{
+	background-image: url("down.png");
+}
+button.comment{
+	background-image: url("comment.png");
+}
+button.share{
+	background-image: url("share.png");
+}
+
+button.close{
+	background-image: url("close.png");
+}
+
+button.delete{
+	background-image: url("delete.png");
+}
+
+main{
+	min-width: 300px;
+	text-align: center;
+	border-radius: 10px;
+	border: 1px solid black;
+	padding: 10px;
+	background-color: white;
+}
+
+footer{
+	text-align: center;
+}
+
+input,select,textarea{
+	background-color: white;
+	border: 2px solid black;
+	border-radius: 8px;
+	padding: 10px 20px;
+	margin: 5px;
+	width: 20vw;
+	min-width: 150px;
+}
+
+button{
+	font-size: 16px;
+	padding: 10px;
+	margin: 5px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: rgb(220, 220, 220);
+}
+
+button:hover{
+	background-color: white;
+	border-color: gray;
+}
+
+button:active{
+	border-color: lightgrey;
+}
+
+input:focus, textarea:focus,select:focus{
+	border-color: darkgrey;
+	transition: 0.4s ease-in-out;
+}
+
+#modal {
+	display: none;
+	position: fixed;
+	z-index: 2;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+}
+
+#modal-content {
+	background-color: white;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid black;
+	width: 40vw;
+	min-width: 250px;
+	text-align: center;
+}
+
+#response{
+	font-size: 20px;
+	color: red;
+}

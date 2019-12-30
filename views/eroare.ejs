@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head><title>Pe linie - 404</title>
+	<% include fragments/head %>
+	<style>
+		main{
+			margin: auto;
+			width: 80%;
+			min-width: 280px;
+			border-radius: 10px;
+			border: 1px solid black;
+			padding: 10px;
+			text-align: center;
+			background-color: white;
+			animation-name: effect;
+			animation-duration: 1s;
+			animation-iteration-count: 1;
+			position: relative;
+		}
+		body{
+			background: linear-gradient(rgb(240, 30, 20),rgb(60, 140, 222));
+			background-size: 200% 200%;
+		}
+		main h1{
+			font-size: 50px;
+			text-decoration: underline;
+		}
+		img{
+			animation-name: effect;
+			animation-duration: 2s;
+			animation-iteration-count: 1;
+			position: relative;
+		}
+		@keyframes effect{
+			0%{
+				opacity: 0;
+				top: 50px;
+			}
+			100%{
+				opacity: 1;
+				top: 0px;
+			}
+		}
+		@media screen and (max-width: 600px){
+			main h1{
+			font-size: 30px;
+			text-decoration: none;
+			font-weight: bold;
+			}
+		}
+	</style>
+	</head>
+	<body>
+			<main>
+			<img src="logo.png" width="35%">
+			<h1><%= mesaj %></h1>
+			</main>
+		</div>
+		<% include fragments/footer %>
+	</body>
+</html>
