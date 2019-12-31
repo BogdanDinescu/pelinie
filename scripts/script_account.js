@@ -1,8 +1,7 @@
 window.onload = function(){
 	main = document.getElementsByTagName("main")[0];
 	aside = document.getElementsByTagName("aside")[0];
-	
-	console.log(paths);
+
 	document.querySelector("img.avatar").src = user.avatar ? user.avatar : "avatar.jpg";
 	// numele utilizatorului
 	var name = document.createElement("h2");
@@ -198,7 +197,7 @@ function afiseazaProfil(){
 			}
 			form.appendChild(document.createElement("br"));
 		}
-		if(user.profile.music){
+		if(user.profile.music && profile.music.length){
 			form.appendChild(document.createTextNode("Genuri muzicale preferate: "));
 			form.innerHTML += user.profile.music.toString();
 			form.appendChild(document.createElement("br"));

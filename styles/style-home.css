@@ -30,10 +30,6 @@ aside h2{
 	cursor: pointer;
 }
 
-aside{
-	text-align: right;
-}
-
 #categorii{
 	overflow: hidden;
 	max-height: 0;

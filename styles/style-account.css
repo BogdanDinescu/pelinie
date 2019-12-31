@@ -21,10 +21,6 @@ aside h1{
 	display: block;
 }
 
-aside{
-	text-align: right;
-}
-
 img.avatar{
 	border-radius: 300px;
 	width: 20vw;

@@ -27,6 +27,7 @@ function appendContent(post){
 	buttoncommnent.onclick = comments;
 	let buttonshare = document.createElement("button");
 	buttonshare.className = "share";
+	buttonshare.onclick = share;
 	figure.appendChild(figcaption);
 	figure.appendChild(info);
 	figure.appendChild(img);
@@ -254,11 +255,18 @@ window.addEventListener("dblclick",function(ev){
 	}
 });
 
-function isVisible (ele) {
-  const { top, bottom } = ele.getBoundingClientRect();
-  const vHeight = (window.innerHeight || document.documentElement.clientHeight);
-
-  return((top > 0 || bottom > 0) && top < vHeight);
+function share(){
+	if(this.parentElement.lastChild.tagName == "INPUT")
+		this.parentElement.removeChild(this.parentElement.lastChild);
+	else{
+		var id = this.parentElement.id;
+		var link = document.createElement("input");
+		this.parentElement.appendChild(link);
+		link.value = `${window.location.href}comments?post=${id}`;
+		link.select();
+		link.setSelectionRange(0, 99999);
+		document.execCommand("copy");
+	}
 }
 
 function Response(text){

@@ -180,6 +180,10 @@ button.delete{
 	background-image: url("delete.png");
 }
 
+a.upload{
+
+}
+
 main{
 	min-width: 300px;
 	text-align: center;
@@ -221,7 +225,7 @@ button:active{
 	border-color: lightgrey;
 }
 
-input:focus, textarea:focus,select:focus{
+input:focus, textarea:focus, select:focus{
 	border-color: darkgrey;
 	transition: 0.4s ease-in-out;
 }
