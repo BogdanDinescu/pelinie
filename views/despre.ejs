@@ -5,7 +5,10 @@
 	<link rel="stylesheet" type="text/css" href="style-despre.css">
 	</head>
 	<body>
-		<% include fragments/header %>
+		<img src="logo.png" id="logo">
+		<header>
+		<a onclick="goBack()">Inapoi</a>
+		</header>
 		<main>
 		<h1>Pe linie</h1>
 			<article>
@@ -150,8 +153,11 @@
 <aside><a href="https://incredibilia.ro/6-fotografii-celebre-povesti-incredibile/" target="_blank">Sursa articolului: incredibila.ro</a></aside>
 </article>
 		</main>
-		<% include fragments/modal %>
 		<% include fragments/footer %>
-		<script></script>
+		<script>
+		function goBack() {
+			window.history.back();
+		}
+		</script>
 	</body>
 </html>

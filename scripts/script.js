@@ -55,6 +55,7 @@ window.onload = function(){
 	Animat = 0;
 	get_posts();
 	get_categories();
+	//setInterval(logoAnim,10000);
 	/*var main = document.getElementsByTagName("main")[0].children;
 	//main[0].style.animationPlayState = "running";
 	window.addEventListener( 'scroll',function(){
@@ -200,6 +201,20 @@ function deletePost(){
 			alert(this.responseText);
 		}
 	}
+}
+
+function logoAnim(){
+	var logo = document.getElementById("logo");
+	var n = 0;
+	var id = setInterval(function(){
+		if(n == 360){
+			clearInterval(id);
+			logo.style.transform = "";
+		}else{
+			logo.style.transform = `rotateX(${n}deg)`;
+			n++;
+		}
+	},1);
 }
 
 window.addEventListener("dblclick",function(ev){

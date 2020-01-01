@@ -2,6 +2,15 @@ window.onload = function(){
 	main = document.getElementsByTagName("main")[0];
 	aside = document.getElementsByTagName("aside")[0];
 
+	var backButton = document.createElement("a");
+	backButton.innerHTML = "Inapoi";
+	backButton.onclick = function(){
+		window.history.back();
+	}
+	var dropdown = document.getElementsByClassName("dropdown")[0];
+	dropdown.parentElement.replaceChild(backButton, dropdown);
+	
+
 	document.querySelector("img.avatar").src = user.avatar ? user.avatar : "avatar.jpg";
 	// numele utilizatorului
 	var name = document.createElement("h2");
@@ -215,6 +224,21 @@ function afiseazaProfil(){
 	}
 }
 
+function upload(){
+	var formData = new FormData();
+	formData.append("caption", document.getElementById("caption").value);
+	formData.append("category", document.getElementById("category").value);
+	formData.append("photo", document.getElementById("photo").files[0]);
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("POST","/upload",true);
+	xhttp.send(formData);
+	xhttp.onreadystatechange = function() {
+		if(this.readyState == 4 && this.status == 200) {
+			Response(this.responseText);
+		}
+	}
+}
+
 function get_categories(selectOption){
 	var xhttp = new XMLHttpRequest();
 	xhttp.open("GET", "/get_categories", true);
@@ -222,14 +246,16 @@ function get_categories(selectOption){
 	xhttp.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
 			var categories = JSON.parse(this.responseText);
-			var categorii = document.getElementById("categorii");
+			var modal = document.getElementById("category");
 			var opt = document.createElement("option");
 			selectOption.appendChild(opt);
 			for(var i=0;i<categories.length;i++){
-				var opt = document.createElement("option");
+				let opt = document.createElement("option");
 				opt.value = categories[i];
 				opt.innerHTML = categories[i];
 				selectOption.appendChild(opt);
+				let opt2 = opt.cloneNode(true)
+				modal.appendChild(opt2);
 			}
 			if(user.profile && user.profile.category) selectOption.value = user.profile.category;
 		}
@@ -296,7 +322,22 @@ function updateProfile(){
 	}
 }
 
+function uploadgui(){
+	document.getElementById("modal").style.display = "block";
+}
+
+function uploadclose(){
+	document.getElementById("modal").style.display = "none";
+}
+
 function Response(text){
-	document.getElementById("response").innerHTML = text;
-	var t = setTimeout(function (){ document.getElementById("response").innerHTML = ""; }, 3000);
+	if(document.getElementById("modal").style.display != "block"){
+		document.getElementById("responseForm").innerHTML = text;
+		var t = setTimeout(function (){ document.getElementById("response").innerHTML = ""; }, 3000);
+	}
+	else{
+		document.getElementById("response").innerHTML = text;
+		var t = setTimeout(function (){ document.getElementById("response").innerHTML = ""; }, 3000);
+
+	}
 }

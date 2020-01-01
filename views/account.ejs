@@ -12,11 +12,13 @@
 				<img class="avatar">
 				<form>
 				</form>
-				<div id="response"></div>
+				<div id="responseForm"></div>
 			</aside>
 			<main>
+			<h2>Posturi preferate<h2>
 			</main>
 		</div>
+		<% include fragments/modal %>
 		<% include fragments/footer %>
 	<script>
 		user = <%- JSON.stringify(user) %>;
