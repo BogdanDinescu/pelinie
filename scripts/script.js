@@ -6,7 +6,7 @@ function appendContent(post){
 	let info = document.createElement("div");
 	info.className = "info";
 	let d = new Date(post.date);
-	info.innerHTML = `${post.category} ${d.toLocaleDateString()}`;
+	info.innerHTML = `${post.category} ${d.toLocaleDateString('en-GB')}`;
 	let img = document.createElement("img");
 	img.src = post.path;
 	let puncte = document.createElement("div");
