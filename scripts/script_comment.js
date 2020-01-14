@@ -131,6 +131,10 @@ function deleteComment(){
 }
 
 function Response(text){
-	document.getElementById("response").innerHTML = text;
-	var t = setTimeout(function (){ document.getElementById("response").innerHTML = ""; }, 3000);
+	var response = document.getElementById("response");
+	response.innerHTML = text;
+	var t = setTimeout(function (){ response.innerHTML = ""; }, 3000);
+	response.addEventListener("click",function (){
+		clearTimeout(t);
+	});
 }

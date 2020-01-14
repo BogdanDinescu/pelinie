@@ -99,7 +99,6 @@ figure{
 	min-width: 300px;
 	height: auto;
 	display: block;
-	/*animation-name: effect;*/
 	animation-duration: 1s;
 	animation-iteration-count: 1;
 	position: relative;
@@ -116,17 +115,6 @@ figure figcaption{
 	background-color: lightgrey;
 	border-radius: 5px 5px 0 0;
 	margin: 0;
-}
-
-@keyframes effect{
-	0%{
-		opacity: 0;
-		top: 50px;
-	}
-	100%{
-		opacity: 1;
-		top: 0px;
-	}
 }
 
 .puncte{

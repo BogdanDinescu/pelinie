@@ -43,7 +43,6 @@ function appendContent(post){
 		figure.appendChild(buttondelete);
 	}
 	figure.appendChild(document.createElement("hr"));
-	//figure.style.animationPlayState = "paused";
 	main.appendChild(figure);
 }
 
@@ -56,16 +55,6 @@ window.onload = function(){
 	get_posts();
 	get_categories();
 	//setInterval(logoAnim,10000);
-	/*var main = document.getElementsByTagName("main")[0].children;
-	//main[0].style.animationPlayState = "running";
-	window.addEventListener( 'scroll',function(){
-		for(let i = Animat; i < main.length; i++){
-			if(isVisible(main[i])){
-				main[i].style.animationPlayState = "running";
-				Animat++;
-			}
-		}
-	});*/
 }
 
 function vote(){
@@ -285,8 +274,12 @@ function share(){
 }
 
 function Response(text){
-	document.getElementById("response").innerHTML = text;
-	var t = setTimeout(function (){ document.getElementById("response").innerHTML = ""; }, 3000);
+	var response = document.getElementById("response");
+	response.innerHTML = text;
+	var t = setTimeout(function (){ response.innerHTML = ""; }, 3000);
+	response.addEventListener("click",function (){
+		clearTimeout(t);
+	});
 }
 
 function uploadgui(){

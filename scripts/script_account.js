@@ -206,7 +206,7 @@ function afiseazaProfil(){
 			}
 			form.appendChild(document.createElement("br"));
 		}
-		if(user.profile.music && profile.music.length){
+		if(user.profile.music && user.profile.music.length){
 			form.appendChild(document.createTextNode("Genuri muzicale preferate: "));
 			form.innerHTML += user.profile.music.toString();
 			form.appendChild(document.createElement("br"));
@@ -331,13 +331,16 @@ function uploadclose(){
 }
 
 function Response(text){
+	var response;
 	if(document.getElementById("modal").style.display != "block"){
-		document.getElementById("responseForm").innerHTML = text;
-		var t = setTimeout(function (){ document.getElementById("response").innerHTML = ""; }, 3000);
+		response = document.getElementById("responseForm");
 	}
 	else{
-		document.getElementById("response").innerHTML = text;
-		var t = setTimeout(function (){ document.getElementById("response").innerHTML = ""; }, 3000);
-
+		response = document.getElementById("response");
 	}
+	response.innerHTML = text;
+	var t = setTimeout(function (){ response.innerHTML = ""; }, 3000);
+	response.addEventListener("click",function (){
+		clearTimeout(t);
+	});
 }
