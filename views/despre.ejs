@@ -10,6 +10,7 @@
 		<a onclick="goBack()">Inapoi</a>
 		</header>
 		<main>
+		<div id="nume">Salut, </div>
 		<h1>Pe linie</h1>
 			<article>
 			
@@ -154,10 +155,14 @@
 </article>
 		</main>
 		<% include fragments/footer %>
-		<script>
+	</body>
+	<script>
 		function goBack() {
 			window.history.back();
 		}
-		</script>
-	</body>
+		window.onload = function(){
+			var name = JSON.parse(localStorage.getItem("user")).name;
+			document.getElementById("nume").innerHTML += name;
+		}
+	</script>
 </html>

@@ -16,7 +16,7 @@
 	width: 80%;
 }
 
-.info{
+.info,#nume{
 	width: 100%;
 	text-align: left;
 	color: grey;
