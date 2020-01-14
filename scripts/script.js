@@ -55,6 +55,17 @@ window.onload = function(){
 	get_posts();
 	get_categories();
 	//setInterval(logoAnim,10000);
+	if(user.admin){
+		let aside = document.getElementsByTagName("aside")[0];
+		let inputCategorie = document.createElement("input");
+		inputCategorie.className = "inputSmall";
+		inputCategorie.placeholder = "Noua categorie";
+		let buttonCategorie = document.createElement("button");
+		buttonCategorie.innerHTML = "Adauga categorie";
+		buttonCategorie.onclick = addCategory;
+		aside.appendChild(inputCategorie);
+		aside.appendChild(buttonCategorie);
+	}
 }
 
 function vote(){
@@ -160,6 +171,20 @@ function get_categories(){
 				selectOption.appendChild(opt);
 				categorii.appendChild(li);
 			}
+		}
+	}
+}
+
+function addCategory(){
+	var category = this.previousSibling.value;
+	this.previousSibling.value = "";
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("POST","/add_category",true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send(`category=${category}`);
+	xhttp.onreadystatechange = function() {
+		if(this.readyState == 4 && this.status == 200) {
+			alert(this.responseText);
 		}
 	}
 }

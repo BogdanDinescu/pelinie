@@ -16,6 +16,11 @@
 	width: 80%;
 }
 
+.inputSmall{
+	width: 60%;
+	min-width: 70px;
+}
+
 .info,#nume{
 	width: 100%;
 	text-align: left;

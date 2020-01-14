@@ -252,13 +252,29 @@ app.get('/get_posts',function(req,res){
 });
 
 app.get('/get_categories',function(req,res){
-	General.findOne({},function(err,doc){
+	fs.readFile('categorii/categorii.json',function(err,file){
 		if(err) console.log(err);
-		if(doc){
-			res.setHeader('Content-Type', 'application/json');
-			res.send(doc.array);
-		}
+		var json = JSON.parse(file);
+		res.setHeader('Content-Type', 'application/json');
+		res.send(json.categorii);
 	});
+});
+
+app.post('/add_category',function(req,res){
+	if(req.session.user.admin){
+		if(req.body.category){
+			var textFis = fs.readFileSync("categorii/categorii.json");
+			var json = JSON.parse(textFis);
+			json.categorii.push(req.body.category);
+			textFis = JSON.stringify(json);
+			fs.writeFileSync("categorii/categorii.json", textFis);
+			res.send("Adaugare efectuata");
+		}else{
+			res.send("Camp gol");
+		}
+	}else{
+		res.send("Nu sunteti admin");
+	}
 });
 
 function updatePhotoVotes(id,vote){
