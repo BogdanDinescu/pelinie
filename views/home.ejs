@@ -12,13 +12,12 @@
 				<ul id="categorii"></ul>
 			</aside>
 			<main>
-			<div id="nume">Salut, <%=user.name%></div>
+			<div id="user" data-user="<%= JSON.stringify(user) %>" >Salut, <%=user.name%></div>
 			</main>
 			<button class="Load" onclick="get_posts()">Incarca mai multe</button>
 		</div>
 		<% include fragments/modal %>
 		<% include fragments/footer %>
-	<script>localStorage.setItem('user','<%- JSON.stringify(user) %>');</script>
 	<script src="script.js"></script>
 	</body>
 </html>

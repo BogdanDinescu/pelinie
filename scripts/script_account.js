@@ -1,4 +1,7 @@
 window.onload = function(){
+	user = JSON.parse(document.getElementById("user").dataset.user);
+	console.log(document.getElementById("paths").dataset.paths);
+	paths = JSON.parse(document.getElementById("paths").dataset.paths);
 	main = document.getElementsByTagName("main")[0];
 	aside = document.getElementsByTagName("aside")[0];
 

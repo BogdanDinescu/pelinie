@@ -47,7 +47,8 @@ function appendContent(post){
 }
 
 window.onload = function(){
-	user = JSON.parse(localStorage.getItem('user'));
+	user = JSON.parse(document.getElementById("user").dataset.user);
+	localStorage.setItem("user",document.getElementById("user").dataset.user);
 	main = document.getElementsByTagName("main")[0];
 	Skip = 0; // cate au fost incarcate deja
 	Option = ""; // Optiunea, categoria

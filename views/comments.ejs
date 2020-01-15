@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="style-comment.css">
 	</head>
 	<body>
+		<div id="post" data-post="<%= JSON.stringify(post) %>" ></div>
 		<main>
 		<figure>
 			<figcaption><%= post.caption %></figcaption>
@@ -20,7 +21,6 @@
 		</div>
 		</main>
 		<% include fragments/footer %>
-	<script>post = <%- JSON.stringify(post) %>;</script>
 	<script src="script_comment.js"></script>
 	</body>
 </html>

@@ -38,6 +38,7 @@ function appendContent(comment){
 }
 
 window.onload = function(){
+	post = JSON.parse(document.getElementById("post").dataset.post);
 	user = JSON.parse(localStorage.getItem('user'));
 	post.comments.forEach(appendContent);
 	comment_section = document.getElementById("comment_section").innerHTML;

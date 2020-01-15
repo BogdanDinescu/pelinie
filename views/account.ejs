@@ -5,6 +5,8 @@
 	<link rel="stylesheet" type="text/css" href="style-account.css">
 	</head>
 	<body>
+		<div id="user" data-user="<%= JSON.stringify(user) %>" ></div>
+		<div id="paths" data-paths="<%= JSON.stringify(paths) %>" ></div>
 		<% include fragments/header %>
 		<div class="options-container">
 			<aside>
@@ -20,10 +22,6 @@
 		</div>
 		<% include fragments/modal %>
 		<% include fragments/footer %>
-	<script>
-		user = <%- JSON.stringify(user) %>;
-		paths = <%- JSON.stringify(paths) %>;
-	</script>
 	<script src="script_account.js"></script>
 	</body>
 </html>
